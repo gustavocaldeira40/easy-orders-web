@@ -40,6 +40,25 @@ export const InputPersonalized = styled(TextField)`
   }
 `
 
+export const ContainerIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const TextIcon = styled.span<any>`
+  font-family: Roboto;
+  font-style: italic;
+  font-size: 0.8rem;
+  margin-right: 5px;
+  color: ${(props) => (props.isCheck ? Colors.success : Colors.error)};
+`
+
+export const Icon = styled.img`
+  width: 1.4vw;
+  height: auto;
+`
+
 export const ContainerError = styled.div`
   justify-content: flex-start;
   margin: 10px;

@@ -4,7 +4,7 @@ import Header from 'components/Header'
 import InputComponent from 'components/Input'
 import TitleDefault from 'components/TitleDefault'
 import { useFormik } from 'formik'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import * as yup from 'yup'
@@ -29,6 +29,7 @@ const RecoveryPassword: React.FC = () => {
    *   STATES
    */
 
+  const [loading, setLoading] = useState(false)
   /*
    *   HOOKS
    */
@@ -98,7 +99,7 @@ const RecoveryPassword: React.FC = () => {
             disabled={!isValid}
             onClick={handleSubmit}
             styles={{
-              opacity: !isValid ? 0.5 : 1,
+              opacity: !isValid || loading ? 0.5 : 1,
               transition: '1s all',
             }}
           >

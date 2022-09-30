@@ -1,6 +1,8 @@
+import { Colors } from 'styles/colors'
 import styled from 'styled-components'
 
 import BGScreen from 'assets/images/bg-lines.png'
+import { Link } from 'react-router-dom'
 
 const { innerHeight } = window
 
@@ -18,15 +20,19 @@ export const Container = styled.div`
   height: ${innerHeight}px;
 `
 
-export const ContainerTop = styled.div``
-
-export const ContainerInput = styled.div`
+export const ContainerInputs = styled.div`
   display: flex;
-  padding: 20px;
+  flex-wrap: wrap;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 20px;
 `
 
-export const ContainerButton = styled.div`
+export const Separator = styled.div`
+  width: 2vw;
+`
+export const ContainerButtons = styled.div`
   display: flex;
-  align-items: center;
   justify-content: flex-end;
 `

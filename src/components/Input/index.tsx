@@ -5,13 +5,17 @@ import { InputProps } from 'types/input'
 import { Colors } from 'styles/colors'
 import { InputAdornment } from '@mui/material'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
-
+import CheckIcon from 'assets/icons/check.png'
+import ErrorIcon from 'assets/icons/error.png'
 import {
   Container,
   ContainerError,
+  ContainerIcon,
   ContainerInput,
   ErrorMessage,
+  Icon,
   InputPersonalized,
+  TextIcon,
 } from './style'
 
 const InputComponent: React.FC<InputProps> = ({
@@ -28,6 +32,8 @@ const InputComponent: React.FC<InputProps> = ({
   style,
   isInputNumber,
   width,
+  isCheck,
+  check,
   ...rest
 }) => {
   const [isFocused, setIsFocused] = useState(false)
@@ -68,7 +74,7 @@ const InputComponent: React.FC<InputProps> = ({
           InputProps={{
             disableUnderline: true,
             readOnly: disabled,
-            endAdornment: isPassword && (
+            endAdornment: isPassword ? (
               <InputAdornment position="end">
                 {hidden ? (
                   <AiOutlineEye
@@ -86,7 +92,21 @@ const InputComponent: React.FC<InputProps> = ({
                   />
                 )}
               </InputAdornment>
-            ),
+            ) : isCheck ? (
+              <InputAdornment position="end">
+                {check ? (
+                  <ContainerIcon>
+                    <TextIcon isCheck={check}>Nickname Avaliable</TextIcon>
+                    <Icon src={CheckIcon} alt="check icon" />
+                  </ContainerIcon>
+                ) : (
+                  <ContainerIcon>
+                    <TextIcon isCheck={check}>Nickname Not Available</TextIcon>
+                    <Icon src={ErrorIcon} alt="error icon" />
+                  </ContainerIcon>
+                )}
+              </InputAdornment>
+            ) : null,
           }}
           InputLabelProps={{
             shrink: true,

@@ -35,8 +35,9 @@ const Login: React.FC = () => {
   /*
    *   CONTEXT
    */
-  const { setUser, setIsAuthenticate, setToken, logOut } =
-    useContext(DataContext)
+  const { setUser, setIsAuthenticate, setToken, logOut } = useContext(
+    DataContext,
+  )
   /*
    *   REFS
    */
@@ -216,7 +217,7 @@ const Login: React.FC = () => {
                 disabled={!isValid}
                 onClick={handleSubmit}
                 styles={{
-                  opacity: !isValid ? 0.5 : 1,
+                  opacity: !isValid || loading ? 0.5 : 1,
                   transition: '1s all',
                 }}
               >
