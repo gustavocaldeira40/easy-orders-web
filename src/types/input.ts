@@ -12,6 +12,6 @@ export type InputProps = {
   style?: any
   width?: string | number
   isInputNumber?: boolean
-  isCheck?:boolean
-  check?:boolean
+  isCheck?: boolean
+  check?: boolean
 }

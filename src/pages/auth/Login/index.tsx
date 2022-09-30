@@ -35,9 +35,8 @@ const Login: React.FC = () => {
   /*
    *   CONTEXT
    */
-  const { setUser, setIsAuthenticate, setToken, logOut } = useContext(
-    DataContext,
-  )
+  const { setUser, setIsAuthenticate, setToken, logOut } =
+    useContext(DataContext)
   /*
    *   REFS
    */

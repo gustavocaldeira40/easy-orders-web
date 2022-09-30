@@ -25,7 +25,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
         backgroundColor: outlined ? 'transparent' : Colors.buttonPrimary,
         color: Colors.white,
         borderRadius: 15,
-        padding:  10,
+        padding: 10,
         margin: 10,
         ...styles,
       }}
