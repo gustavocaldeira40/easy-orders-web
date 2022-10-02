@@ -1,12 +1,34 @@
 import React from 'react'
 import Logo from 'assets/visual/easy-orders.png'
-import { Container, ImageLogo } from './style'
+import DrawerComponent from 'components/Drawer'
+import {
+  Container,
+  ContainerCenter,
+  ImageLogo,
+  TextNameUser,
+  TextTitle,
+} from './style'
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  withText?: string
+}
+
+const Header: React.FC<HeaderProps> = ({ withText }) => {
   return (
-    <Container>
-      <ImageLogo src={Logo} alt="Logo Easy Orders" />
-    </Container>
+    <>
+      <Container>
+        <ContainerCenter>
+          {withText ? (
+            <TextTitle>{withText}</TextTitle>
+          ) : (
+            <ImageLogo src={Logo} alt="Logo Easy Orders" />
+          )}
+        </ContainerCenter>
+        <TextNameUser>Gustavo Henrique</TextNameUser>
+      </Container>
+
+      <DrawerComponent />
+    </>
   )
 }
 

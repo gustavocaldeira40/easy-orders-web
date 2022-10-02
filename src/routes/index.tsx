@@ -5,6 +5,7 @@ import Login from 'pages/auth/Login'
 import RecoveryPassword from 'pages/auth/Recovery-Password'
 import RecoveryPasswordCode from 'pages/auth/Recovery-Password-Code'
 import Register from 'pages/auth/Register'
+import Dashboard from 'pages/app/Dashboard'
 
 const MainRoutes: React.FC = () => {
   return (
@@ -17,6 +18,9 @@ const MainRoutes: React.FC = () => {
         path="/recovery-password-code-confirmation"
         element={<RecoveryPasswordCode />}
       />
+
+      {/* App */}
+      <Route path="/dashboard" element={<Dashboard />} />
 
       {/* 404   */}
       {/* <Route path="*" element={<NotFound />} /> */}

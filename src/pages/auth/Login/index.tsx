@@ -102,16 +102,16 @@ const Login: React.FC = () => {
           password: values?.password,
         }
 
-        const data = await EndPoints.login(
-          emailOrNickname ? formDataEmail : formDataNickname,
-        )
-        if (data) {
-          const user = await EndPoints.getUser(data?.user?.id)
-          setUser(user)
-          setToken(data?.access_token)
-          setIsAuthenticate(true)
-          navigateTo('/clients')
-        }
+        // const data = await EndPoints.login(
+        //   emailOrNickname ? formDataEmail : formDataNickname,
+        // )
+        // if (data) {
+        //   const user = await EndPoints.getUser(data?.user?.id)
+        //   setUser(user)
+        //   setToken(data?.access_token)
+        //   setIsAuthenticate(true)
+        navigateTo('/dashboard')
+        // }
       } catch (error) {
         console.log('error', error)
 
