@@ -146,7 +146,7 @@ const Login: React.FC = () => {
     <>
       <Loading show={loading} />
       <Container>
-        <Header />
+        <Header  withoutMenu/>
         <BGContainer between>
           <TitleDefault
             title="Welcome to"

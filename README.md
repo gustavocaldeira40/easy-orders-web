@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+<h1 align="center">Easy Orders Web</h1>
+<p align="center">Front-end of Easy Orders application developed in React JS with Typescript</p>
+<p>Platform created as an admin panel.</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Prerequisites
 
-## Available Scripts
+Before starting, you will need to have the following tools installed on your machine: • [Git](https://git-scm.com/downloads), • [Node.js LTS](https://nodejs.org/en/download/), • [Node.js LTS](https://nodejs.org/en/download/), • [Yarn](https://yarnpkg.com/getting-started/install).
 
-In the project directory, you can run:
+<p>Besides, it's good to have an editor to work with th code like  <a href="https://code.visualstudio.com/" target="_blank">VSCode</a></p>
 
-### `npm start`
+#### 🧭 Running an application
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Clone this repository
+$ git clone https://github.com/gustavocaldeira40/easy-orders-web.git
 
-### `npm test`
+# Install as dependencies
+$ yarn or npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Run the application in development mode
+$ yarn start or npx expo start
 
-### `npm run build`
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠 Technologies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+These tools and others were used in building the project.
 
-### `npm run eject`
+#### **App** [React JS](https://pt-br.reactjs.org/docs/getting-started.html) + [TypeScript](https://www.typescriptlang.org/))
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+> See the file [package.json](https://github.com/gustavocaldeira40/easy-orders-web/blob/master/package.json)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Layout
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+https://www.figma.com/file/P2ex5ZjJkEIENrD55FApt1/Easy-Orders-Project?node-id=0%3A1
 
-## Learn More
+## 🔗 Links
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gustavo-henrique-a51889116/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Autores
+
+- [@gustavocaldeira40](https://github.com/gustavocaldeira40)

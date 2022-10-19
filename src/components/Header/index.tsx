@@ -11,9 +11,10 @@ import {
 
 interface HeaderProps {
   withText?: string
+  withoutMenu?: boolean
 }
 
-const Header: React.FC<HeaderProps> = ({ withText }) => {
+const Header: React.FC<HeaderProps> = ({ withText,withoutMenu }) => {
   return (
     <>
       <Container>
@@ -27,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({ withText }) => {
         <TextNameUser>Gustavo Henrique</TextNameUser>
       </Container>
 
-      <DrawerComponent />
+   {!withoutMenu &&   <DrawerComponent />}
     </>
   )
 }

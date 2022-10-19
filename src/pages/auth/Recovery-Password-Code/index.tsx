@@ -88,7 +88,7 @@ const RecoveryPasswordCode: React.FC = () => {
 
   return (
     <Container>
-      <Header />
+      <Header withoutMenu />
       <BGContainer between>
         <ContainerTop>
           <TitleDefault

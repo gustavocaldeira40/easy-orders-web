@@ -143,7 +143,7 @@ const Register: React.FC = () => {
 
   return (
     <Container>
-      <Header />
+      <Header withoutMenu />
 
       <BGContainer between>
         <TitleDefault

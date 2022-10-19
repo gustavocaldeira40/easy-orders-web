@@ -49,7 +49,7 @@ export const ContainerSendAgain = styled.div`
   width: 15vw;
   display: flex;
   align-items: center;
-  margin: 0 30px;
+  margin: 10px 30px;
   cursor: pointer;
 `
 
