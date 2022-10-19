@@ -14,7 +14,7 @@ interface HeaderProps {
   withoutMenu?: boolean
 }
 
-const Header: React.FC<HeaderProps> = ({ withText,withoutMenu }) => {
+const Header: React.FC<HeaderProps> = ({ withText, withoutMenu }) => {
   return (
     <>
       <Container>
@@ -28,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({ withText,withoutMenu }) => {
         <TextNameUser>Gustavo Henrique</TextNameUser>
       </Container>
 
-   {!withoutMenu &&   <DrawerComponent />}
+      {!withoutMenu && <DrawerComponent />}
     </>
   )
 }

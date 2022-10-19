@@ -35,8 +35,9 @@ const Login: React.FC = () => {
   /*
    *   CONTEXT
    */
-  const { setUser, setIsAuthenticate, setToken, logOut } =
-    useContext(DataContext)
+  const { setUser, setIsAuthenticate, setToken, logOut } = useContext(
+    DataContext,
+  )
   /*
    *   REFS
    */
@@ -146,7 +147,7 @@ const Login: React.FC = () => {
     <>
       <Loading show={loading} />
       <Container>
-        <Header  withoutMenu/>
+        <Header withoutMenu />
         <BGContainer between>
           <TitleDefault
             title="Welcome to"
