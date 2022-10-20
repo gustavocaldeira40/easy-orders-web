@@ -43,54 +43,48 @@ const ChangePassword: React.FC = () => {
   /*
    *   FORMIK
    */
-  const {
-    errors,
-    resetForm,
-    handleSubmit,
-    isValid,
-    values,
-    handleChange,
-  } = useFormik({
-    initialValues: {
-      oldPassword: '',
-      password: '',
-      password_confirmation: '',
-    },
-    enableReinitialize: true,
-    validationSchema: yup.object().shape({
-      oldPassword: yup
-        .string()
-        .required('Enter the password')
-        .min(6, 'Password must contain at least 6 characters'),
-      password: yup
-        .string()
-        .required('Enter the password')
-        .min(6, 'Password must contain at least 6 characters'),
-      password_confirmation: yup.string().when('password', {
-        is: (val: string) => val?.length > 0,
-        then: yup
+  const { errors, resetForm, handleSubmit, isValid, values, handleChange } =
+    useFormik({
+      initialValues: {
+        oldPassword: '',
+        password: '',
+        password_confirmation: '',
+      },
+      enableReinitialize: true,
+      validationSchema: yup.object().shape({
+        oldPassword: yup
           .string()
-          .required('Provide password confirmation')
-          .oneOf([yup.ref('password')], 'Passwords must be the same'),
+          .required('Enter the password')
+          .min(6, 'Password must contain at least 6 characters'),
+        password: yup
+          .string()
+          .required('Enter the password')
+          .min(6, 'Password must contain at least 6 characters'),
+        password_confirmation: yup.string().when('password', {
+          is: (val: string) => val?.length > 0,
+          then: yup
+            .string()
+            .required('Provide password confirmation')
+            .oneOf([yup.ref('password')], 'Passwords must be the same'),
+        }),
       }),
-    }),
-    onSubmit: async (_values) => {
-      setLoading(true)
-      try {
-        const userId = await Cookies.get('userId')
+      onSubmit: async (_values) => {
+        setLoading(true)
+        try {
+          const userId = await Cookies.get('userId')
 
-        const data = await EndPoints.changePassword(Number(userId), values)
-        if (data) {
-          await logOut()
+          const data = await EndPoints.changePassword(Number(userId), values)
+          if (data) {
+            await logOut()
+          }
+        } catch (error) {
+          console.log('error', error)
+          toast.error('Error the save , verify the datas and try again.')
+        } finally {
+          setLoading(false)
         }
-      } catch (error) {
-        console.log('error', error)
-        toast.error('Error the save , verify the datas and try again.')
-      } finally {
-        setLoading(false)
-      }
-    },
-  })
+      },
+    })
 
   /*
    *   REFS
