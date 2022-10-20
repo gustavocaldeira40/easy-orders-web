@@ -8,7 +8,8 @@ export const ContainerInput = styled.div<any>`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: ${Colors.bgInputActive};
+  background: ${(props) =>
+    props.withoutBackground ? 'transparent' : Colors.bgInputActive};
   border: 1px solid
     ${(props) => (props.isFocused ? Colors.white : `${Colors.white}50`)};
   margin: ${(props) => (props.withMarginVertical ? '10px 0px' : '0px')};

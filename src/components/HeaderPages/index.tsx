@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Hidden from '@mui/material/Hidden/Hidden'
-import FilterIcon from 'assets/icons/filter.png'
+import FilterIcon from 'assets/icons/filter-white.png'
 import {
   Container,
   Icon,

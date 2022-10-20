@@ -8,7 +8,7 @@ interface ButtonProps {
   onClick: () => void
   disabled?: boolean
   styles?: any
-
+  secondary?: boolean
   outlined?: boolean
 }
 
@@ -18,11 +18,16 @@ const ButtonComponent: React.FC<ButtonProps> = ({
   disabled,
   styles,
   outlined,
+  secondary,
 }) => {
   return (
     <Button
       style={{
-        backgroundColor: outlined ? 'transparent' : Colors.buttonPrimary,
+        backgroundColor: outlined
+          ? 'transparent'
+          : secondary
+          ? Colors.bg
+          : Colors.buttonPrimary,
         color: Colors.white,
         borderRadius: 15,
         padding: 10,

@@ -2,9 +2,9 @@ import styled from 'styled-components'
 import { Colors } from 'styles/colors'
 
 export const ContainerRounded = styled.div<any>`
-  width: ${(props) => (props.isSmall ? '30px' : props.isBig ? '100%' : '50px')};
+  width: ${(props) => (props.isSmall ? '40px' : props.isBig ? '100%' : '50px')};
   height: ${(props) =>
-    props.isSmall ? '30px' : props.isBig ? '100%' : '50px'};
+    props.isSmall ? '40px' : props.isBig ? '100%' : '50px'};
   border-radius: ${(props) => (props.isBig ? '50px' : '25px')};
   display: flex;
   justify-content: center;
@@ -12,6 +12,7 @@ export const ContainerRounded = styled.div<any>`
   background: ${Colors.blackFull};
   border: 2px solid #8a0ea7;
   margin-right: ${(props) => (props.withoutMR ? 0 : '20px')};
+  margin-left: 20px;
   margin-top: ${(props) => (props.withMT ? '20px' : 0)};
   padding: ${(props) => (props.withoutPadding ? 0 : '15px')};
   cursor: pointer;

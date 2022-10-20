@@ -13,6 +13,9 @@ export const IconMenuOpen = styled.img`
   width: 15px;
   cursor: pointer;
   height: auto;
+  position: fixed;
+  top: 20px;
+  left: 20px;
 `
 
 export const ContainerItem = styled.div`

@@ -14,4 +14,5 @@ export type InputMaskProps = {
   onKeyDown?: React.KeyboardEventHandler<HTMLInputElement> | undefined
   withMarginVertical?: boolean
   messageHelperText?: string
+  withoutBackground?: boolean
 }

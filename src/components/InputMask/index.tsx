@@ -24,6 +24,7 @@ const InputMaskComponent: React.FC<InputMaskProps> = ({
   withMarginVertical,
   mask,
   messageHelperText,
+  withoutBackground,
 }) => {
   const documentMask = '999.999.999-99'
 
@@ -31,7 +32,11 @@ const InputMaskComponent: React.FC<InputMaskProps> = ({
   const [isFocused, setIsFocused] = useState(false)
 
   return (
-    <ContainerInput width={width} withMarginVertical={withMarginVertical}>
+    <ContainerInput
+      withoutBackground={withoutBackground}
+      width={width}
+      withMarginVertical={withMarginVertical}
+    >
       <InputStyled
         disabled={disabled}
         width={width}

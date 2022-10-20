@@ -39,8 +39,6 @@ const DrawerComponent: React.FC = () => {
             backgroundColor: 'transparent',
             display: 'flex',
             justifyContent: 'center',
-            minHeight: 50,
-            left: 20,
           }}
           position="fixed"
         >

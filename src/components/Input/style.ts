@@ -2,6 +2,11 @@ import { Colors } from 'styles/colors'
 import styled from 'styled-components'
 
 import { TextField } from '@material-ui/core'
+import { StandardTextFieldProps } from '@material-ui/core/TextField'
+
+interface InputProps extends StandardTextFieldProps {
+  withoutBackground?: boolean
+}
 
 export const Container = styled.div<any>`
   width: ${(props) => (props.width ? props.width : '50%')};
@@ -23,8 +28,9 @@ export const ContainerInput = styled.div<any>`
   border-radius: 15px;
 `
 
-export const InputPersonalized = styled(TextField)`
-  background: ${Colors.bgInputActive};
+export const InputPersonalized = styled(TextField)<InputProps>`
+  background: ${(props) =>
+    props.withoutBackground ? 'transparent' : Colors.bgInputActive};
   border-radius: 15px;
 
   input {

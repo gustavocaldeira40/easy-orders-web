@@ -14,4 +14,5 @@ export type InputProps = {
   isInputNumber?: boolean
   isCheck?: boolean
   check?: boolean
+  withoutBackground?: boolean
 }

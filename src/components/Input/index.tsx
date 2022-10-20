@@ -34,6 +34,7 @@ const InputComponent: React.FC<InputProps> = ({
   width,
   isCheck,
   check,
+  withoutBackground,
   ...rest
 }) => {
   const [isFocused, setIsFocused] = useState(false)
@@ -43,6 +44,7 @@ const InputComponent: React.FC<InputProps> = ({
     <Container width={width}>
       <ContainerInput errorMessage={errorMessage} isFocused={isFocused}>
         <InputPersonalized
+          withoutBackground={withoutBackground}
           variant="standard"
           onKeyDown={onKeyDown}
           ref={passRef}
@@ -68,7 +70,6 @@ const InputComponent: React.FC<InputProps> = ({
               fontSize: 16,
               fontFamily: 'Roboto',
               fontStyle: 'italic',
-              // fontWeight: 400,
             },
           }}
           InputProps={{

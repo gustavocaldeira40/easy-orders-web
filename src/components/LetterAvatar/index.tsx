@@ -69,7 +69,7 @@ const LetterAvatarComponent: React.FC<LetterProps> = ({
       withoutMR={withoutMR}
       withoutPadding={withoutPadding}
     >
-      <TextLetter>{user?.name?.charAt(0)}</TextLetter>
+      <TextLetter>{user?.name?.charAt(0) || 'G'}</TextLetter>
     </ContainerRounded>
   )
 }
