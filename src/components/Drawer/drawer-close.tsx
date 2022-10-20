@@ -20,7 +20,6 @@ const DrawerClose: React.FC<DrawerCloseProps> = ({ open, setOpen }) => {
           left: 0,
           top: 20,
           position: 'fixed',
-          display: 'flex',
         }}
       >
         <List

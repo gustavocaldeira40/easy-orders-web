@@ -5,12 +5,12 @@ export const ContainerIconMenu = styled.div`
   margin: 0 10px;
 `
 export const IconMenu = styled.img`
-  width: 1.5vw;
+  width: 20px;
   height: auto;
 `
 
 export const IconMenuOpen = styled.img`
-  width: 1vw;
+  width: 15px;
   cursor: pointer;
   height: auto;
 `

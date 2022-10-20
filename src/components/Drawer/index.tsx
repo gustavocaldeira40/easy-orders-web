@@ -11,6 +11,8 @@ import { List } from '@material-ui/core'
 import ListItemText from '@mui/material/ListItemText'
 import { innerHeight } from 'utils/window'
 import { DrawerItemProps } from 'interfaces/drawer-item'
+import Hidden from '@mui/material/Hidden/Hidden'
+import MenuIcon from '@mui/icons-material/Menu'
 import {
   ContainerIconMenu,
   ContainerItem,
@@ -28,90 +30,95 @@ const DrawerComponent: React.FC = () => {
 
   return (
     <>
-      <AppBar
-        style={{
-          backgroundColor: 'transparent',
-          display: 'flex',
-          justifyContent: 'center',
-          minHeight: 50,
-          left: 20,
-        }}
-        position="fixed"
-      >
-        <IconMenuOpen src={MenuOpenIcon} onClick={() => setOpen(true)} />
-      </AppBar>
+      {/* Screen < 600px */}
 
-      <Drawer
-        style={{ position: 'relative' }}
-        anchor="left"
-        open={open}
-        onClose={() => setOpen(!open)}
-      >
-        <List
+      {/* Screen > 600px */}
+      <Hidden smDown implementation="css">
+        <AppBar
           style={{
-            backgroundColor: Colors.blackFull,
-            paddingTop: 70,
-            width: 200,
-            height: `${innerHeight}px`,
-            cursor: 'pointer',
+            backgroundColor: 'transparent',
+            display: 'flex',
+            justifyContent: 'center',
+            minHeight: 50,
+            left: 20,
           }}
+          position="fixed"
         >
-          {listMenu?.map((item, index) => {
-            return (
-              <>
-                <ContainerItem
-                  onClick={() => {
-                    setItemSelected(item)
-                  }}
-                >
-                  <List
-                    key={index}
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'row',
-                      padding: 10,
+          <IconMenuOpen src={MenuOpenIcon} onClick={() => setOpen(true)} />
+        </AppBar>
+
+        <Drawer
+          style={{ position: 'relative' }}
+          anchor="left"
+          open={open}
+          onClose={() => setOpen(!open)}
+        >
+          <List
+            style={{
+              backgroundColor: Colors.blackFull,
+              paddingTop: 70,
+              width: 200,
+              height: `${innerHeight}px`,
+              cursor: 'pointer',
+            }}
+          >
+            {listMenu?.map((item, index) => {
+              return (
+                <>
+                  <ContainerItem
+                    onClick={() => {
+                      setItemSelected(item)
                     }}
                   >
-                    <ListItemIcon
+                    <List
+                      key={index}
                       style={{
                         display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        cursor: 'pointer',
+                        flexDirection: 'row',
+                        padding: 10,
                       }}
                     >
-                      {item?.icon}
-                    </ListItemIcon>
+                      <ListItemIcon
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          cursor: 'pointer',
+                        }}
+                      >
+                        {item?.icon}
+                      </ListItemIcon>
 
-                    <ListItemText
-                      primary={item?.name}
-                      style={{
-                        fontWeight: 500,
-                        color: Colors.white,
-                        fontFamily: 'Roboto Condensed',
-                        textTransform: 'uppercase',
-                      }}
-                    />
-                  </List>
+                      <ListItemText
+                        primary={item?.name}
+                        style={{
+                          fontWeight: 500,
+                          color: Colors.white,
+                          fontFamily: 'Roboto Condensed',
+                          textTransform: 'uppercase',
+                        }}
+                      />
+                    </List>
 
-                  <ContainerIconMenu>
-                    {itemSelected?.name === item?.name ? (
-                      <IconMenu src={ArrowDownIcon} />
-                    ) : (
-                      <IconMenu src={ArrowRightIcon} />
-                    )}
-                  </ContainerIconMenu>
-                </ContainerItem>
+                    <ContainerIconMenu>
+                      {itemSelected?.name === item?.name ? (
+                        <IconMenu src={ArrowDownIcon} />
+                      ) : (
+                        <IconMenu src={ArrowRightIcon} />
+                      )}
+                    </ContainerIconMenu>
+                  </ContainerItem>
 
-                <SubMenu item={item} itemSelected={itemSelected} />
-                <LineDown />
-              </>
-            )
-          })}
-        </List>
-      </Drawer>
+                  <SubMenu item={item} itemSelected={itemSelected} />
+                  <LineDown />
+                </>
+              )
+            })}
+          </List>
+        </Drawer>
 
-      {!open ? <DrawerClose open={open} setOpen={setOpen} /> : null}
+        {!open ? <DrawerClose open={open} setOpen={setOpen} /> : null}
+      </Hidden>
     </>
   )
 }

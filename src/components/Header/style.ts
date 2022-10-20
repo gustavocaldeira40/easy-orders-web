@@ -4,11 +4,12 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   background-color: ${Colors.blackFull};
-  z-index: 50;
+  z-index: 100;
   border-bottom: 1px solid #252525;
   border-radius: 0px 0px 20px 20px;
 
   width: 100%;
+  min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
