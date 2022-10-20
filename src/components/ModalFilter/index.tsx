@@ -2,7 +2,12 @@ import React from 'react'
 import HeaderPages from 'components/HeaderPages'
 
 import Modal from 'react-modal'
-import { ContainerMinFilters, ContainerRow, ContainerTops, TextFilters } from './style'
+import {
+  ContainerMinFilters,
+  ContainerRow,
+  ContainerTops,
+  TextFilters,
+} from './style'
 
 const customStyles = {
   content: {
