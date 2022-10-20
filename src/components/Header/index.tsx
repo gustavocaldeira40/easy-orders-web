@@ -73,8 +73,6 @@ const Header: React.FC<HeaderProps> = ({ withText, withoutMenu }) => {
         <TextNameUser>Gustavo Henrique</TextNameUser>
 
         <LetterAvatarComponent
-          withoutMR
-          isSmall
           onClick={() => setShowMenuAvatar((oldState) => !oldState)}
         />
 

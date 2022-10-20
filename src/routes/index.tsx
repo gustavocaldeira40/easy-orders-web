@@ -6,6 +6,8 @@ import RecoveryPassword from 'pages/auth/Recovery-Password'
 import RecoveryPasswordCode from 'pages/auth/Recovery-Password-Code'
 import Register from 'pages/auth/Register'
 import Dashboard from 'pages/app/Dashboard'
+import ChangePassword from 'pages/app/Change-Password'
+import UserData from 'pages/app/User-Data'
 
 const MainRoutes: React.FC = () => {
   return (
@@ -21,6 +23,8 @@ const MainRoutes: React.FC = () => {
 
       {/* App */}
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/change-password" element={<ChangePassword />} />
+      <Route path="/user-data" element={<UserData />} />
 
       {/* 404   */}
       {/* <Route path="*" element={<NotFound />} /> */}

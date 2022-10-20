@@ -3,16 +3,9 @@ import Cookies from 'js-cookie'
 import { UserData } from 'interfaces/user'
 import React, { useState, useContext, useEffect } from 'react'
 import { LetterProps } from 'types/letter'
-import { ContainerRounded, TextLetter } from './style'
+import { ContainerDark, ContainerRounded, TextLetter } from './style'
 
-const LetterAvatarComponent: React.FC<LetterProps> = ({
-  onClick,
-  isSmall,
-  isBig,
-  withMT,
-  withoutMR,
-  withoutPadding,
-}) => {
+const LetterAvatarComponent: React.FC<LetterProps> = ({ onClick }) => {
   /*
    *   CONTEXT
    */
@@ -61,15 +54,10 @@ const LetterAvatarComponent: React.FC<LetterProps> = ({
   }, [])
 
   return (
-    <ContainerRounded
-      isBig={isBig}
-      withMT={withMT}
-      isSmall={isSmall}
-      onClick={onClick}
-      withoutMR={withoutMR}
-      withoutPadding={withoutPadding}
-    >
-      <TextLetter>{user?.name?.charAt(0) || 'G'}</TextLetter>
+    <ContainerRounded onClick={onClick}>
+      <ContainerDark>
+        <TextLetter>{user?.name?.charAt(0) || 'T'}</TextLetter>
+      </ContainerDark>
     </ContainerRounded>
   )
 }

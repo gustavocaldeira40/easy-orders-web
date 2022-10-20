@@ -19,7 +19,6 @@ import {
   TextInAndAt,
 } from './style'
 
-// Animation Modal
 import './style.css'
 
 interface ModalProps {

@@ -2,20 +2,25 @@ import styled from 'styled-components'
 import { Colors } from 'styles/colors'
 
 export const ContainerRounded = styled.div<any>`
-  width: ${(props) => (props.isSmall ? '40px' : props.isBig ? '100%' : '50px')};
-  height: ${(props) =>
-    props.isSmall ? '40px' : props.isBig ? '100%' : '50px'};
-  border-radius: ${(props) => (props.isBig ? '50px' : '25px')};
+  background: #8a0ea7;
+  height: 7vh;
+  width: 7vh;
+  padding: 2px;
+  margin-left: 20px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const ContainerDark = styled.div`
+  background: #1c0321;
+  border-radius: 100px;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${Colors.blackFull};
-  border: 2px solid #8a0ea7;
-  margin-right: ${(props) => (props.withoutMR ? 0 : '20px')};
-  margin-left: 20px;
-  margin-top: ${(props) => (props.withMT ? '20px' : 0)};
-  padding: ${(props) => (props.withoutPadding ? 0 : '15px')};
-  cursor: pointer;
 `
 
 export const TextLetter = styled.h1<any>`

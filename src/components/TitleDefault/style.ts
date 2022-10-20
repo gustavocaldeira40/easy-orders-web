@@ -42,6 +42,6 @@ export const TextDescription = styled.div`
 
 export const Line = styled.div`
   width: 100%;
-  border-radius: 20px;
+  border-radius: 40px;
   border: 1px solid ${Colors.line};
 `
