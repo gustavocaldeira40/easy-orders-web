@@ -32,13 +32,13 @@ export const TextTitle = styled.h4`
   font-family: 'Roboto';
   font-weight: 400;
   color: ${Colors.white};
-  font-size: 30px;
+  font-size: 2rem;
 `
 
 export const TextNameUser = styled.span`
   font-family: 'Roboto';
 
-  font-size: 20px;
+  font-size: 1.5rem;
 
   color: ${Colors.textMatte};
 `
