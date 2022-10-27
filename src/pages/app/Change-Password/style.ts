@@ -24,7 +24,8 @@ export const ContainerInputs = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  padding: 20px;
+  /* justify-content: space-between;   */
+  /* flex: 1; */
 `
 
 export const Separator = styled.div`

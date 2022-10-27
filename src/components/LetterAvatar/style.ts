@@ -11,6 +11,7 @@ export const ContainerRounded = styled.div<any>`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 `
 
 export const ContainerDark = styled.div`

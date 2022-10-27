@@ -26,7 +26,7 @@ export const Container = styled.div`
 export const TextTitle = styled.h1`
   font-family: 'Roboto Condensed';
   font-weight: 600;
-  font-size: ${px2vw(45)}px;
+  font-size: 1.8rem;
   text-transform: uppercase;
   color: ${Colors.white};
 `

@@ -92,3 +92,13 @@ export const Line = styled.div`
   border: 1px solid ${Colors.line};
   margin: 20px 0;
 `
+
+export const ContainerButtonActions = styled.div`
+  display: flex;
+`
+
+export const ContainerUser = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`

@@ -13,4 +13,5 @@ export const Colors = {
   matte: '#4f4f4f',
   success: '#65E04D',
   error: '#D23434',
+  hover: 'rgba(217, 217, 217, 0.8)',
 }

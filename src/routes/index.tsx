@@ -8,6 +8,7 @@ import Register from 'pages/auth/Register'
 import Dashboard from 'pages/app/Dashboard'
 import ChangePassword from 'pages/app/Change-Password'
 import UserData from 'pages/app/User-Data'
+import UserSettings from 'pages/app/User-Settings'
 
 const MainRoutes: React.FC = () => {
   return (
@@ -25,6 +26,7 @@ const MainRoutes: React.FC = () => {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/change-password" element={<ChangePassword />} />
       <Route path="/user-data" element={<UserData />} />
+      <Route path="/user-settings" element={<UserSettings />} />
 
       {/* 404   */}
       {/* <Route path="*" element={<NotFound />} /> */}

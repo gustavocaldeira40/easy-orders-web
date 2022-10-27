@@ -9,11 +9,13 @@ import LogOutIcon from 'assets/icons/logout.png'
 import MyDataIcon from 'assets/icons/user.png'
 import PasswordIcon from 'assets/icons/password.png'
 import { ContainerItemAvatar, TextMenuAvatar } from 'components/MenuItem/style'
+import MenuIcon from 'assets/icons/menu.png'
 import {
   Container,
   ContainerCenter,
   ContainerMenuAvatar,
   IconLogout,
+  IconMenu,
   ImageLogo,
   TextNameUser,
   TextTitle,
@@ -22,9 +24,14 @@ import {
 interface HeaderProps {
   withText?: string
   withoutMenu?: boolean
+  isHamburguer?: boolean
 }
 
-const Header: React.FC<HeaderProps> = ({ withText, withoutMenu }) => {
+const Header: React.FC<HeaderProps> = ({
+  withText,
+  withoutMenu,
+  isHamburguer,
+}) => {
   /*
    *   CONTEXT
    */
@@ -70,11 +77,17 @@ const Header: React.FC<HeaderProps> = ({ withText, withoutMenu }) => {
             <ImageLogo src={Logo} alt="Logo Easy Orders" />
           )}
         </ContainerCenter>
-        <TextNameUser>Gustavo Henrique</TextNameUser>
+        {isHamburguer ? (
+          <IconMenu src={MenuIcon}  onClick={() => setShowMenuAvatar((oldState) => !oldState)} />
+        ) : (
+          <>
+            <TextNameUser>Gustavo Henrique</TextNameUser>
 
-        <LetterAvatarComponent
-          onClick={() => setShowMenuAvatar((oldState) => !oldState)}
-        />
+            <LetterAvatarComponent
+              onClick={() => setShowMenuAvatar((oldState) => !oldState)}
+            />
+          </>
+        )}
 
         {showMenuAvatar && (
           <ContainerMenuAvatar>

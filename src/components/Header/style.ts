@@ -28,6 +28,7 @@ export const ContainerCenter = styled.div`
 export const ImageLogo = styled.img`
   width: ${px2vw(150)};
   height: auto;
+  margin-right: 15%;
 `
 
 export const TextTitle = styled.h4`
@@ -66,4 +67,10 @@ export const IconLogout = styled.img`
   width: 25px;
   height: 25px;
   margin-right: 20px;
+`
+export const IconMenu = styled.img`
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+  cursor: pointer;
 `

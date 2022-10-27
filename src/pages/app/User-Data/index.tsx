@@ -11,14 +11,17 @@ import { EndPoints } from 'services/endpoints'
 import Cookies from 'js-cookie'
 import LetterAvatarComponent from 'components/LetterAvatar'
 import moment from 'moment'
+import ButtonComponent from 'components/Button'
 import {
   Container,
+  ContainerButtonActions,
   ContainerChangeInformationsUser,
   ContainerDark,
   ContainerHeader,
   ContainerInputs,
   ContainerLetter,
   ContainerTexts,
+  ContainerUser,
   Line,
   TextLetter,
   TextNameUser,
@@ -299,19 +302,60 @@ const UserData: React.FC = () => {
           description="Some information to complete your profile, see below."
         />
       </ContainerHeader>
-      <ContainerChangeInformationsUser>
-        <ContainerLetter>
-          <ContainerDark>
-            <TextLetter>T</TextLetter>
-          </ContainerDark>
-        </ContainerLetter>
-        <ContainerTexts>
-          <TextNameUser>Gustavo</TextNameUser>
-          <TextNick>@Test</TextNick>
-        </ContainerTexts>
-      </ContainerChangeInformationsUser>
+      <ContainerUser>
+        <ContainerChangeInformationsUser>
+          <ContainerLetter>
+            <ContainerDark>
+              <TextLetter>T</TextLetter>
+            </ContainerDark>
+          </ContainerLetter>
+          <ContainerTexts>
+            <TextNameUser>Gustavo</TextNameUser>
+            <TextNick>@Test</TextNick>
+          </ContainerTexts>
+        </ContainerChangeInformationsUser>
+        <ContainerButtonActions>
+          <ButtonComponent
+            margin="10px"
+            onClick={() => (hiddenButtonRef as any)?.current.click()}
+            outlined
+          >
+            Add Picture
+            <input
+              type="file"
+              accept="image/*"
+              ref={hiddenButtonRef}
+              name="file"
+              onChange={(file: React.ChangeEvent) => {
+                const { files } = file.target as HTMLInputElement
+                if (files && files.length !== 0) {
+                  changeAvatar(files[0])
+                  setBaseImage(files[0])
+                }
+              }}
+              style={{ display: 'none' }}
+            />
+          </ButtonComponent>
+
+          <ButtonComponent
+            margin="10px"
+            onClick={() =>
+              navigateTo('/user-settings', {
+                state: { user },
+              })
+            }
+            outlined
+          >
+            Settings
+          </ButtonComponent>
+
+          {/* {!user?.avatar && (
+            <span style={{ color: 'white' }}>{baseImage?.name || 'None'}</span>
+          )} */}
+        </ContainerButtonActions>
+      </ContainerUser>
       <ContainerInputs>
-        <TextTitle>MOre Informations</TextTitle>
+        <TextTitle>More Informations</TextTitle>
         <Line />
       </ContainerInputs>
     </Container>

@@ -10,6 +10,7 @@ interface ButtonProps {
   styles?: any
   secondary?: boolean
   outlined?: boolean
+  margin?: string | number
 }
 
 const ButtonComponent: React.FC<ButtonProps> = ({
@@ -18,6 +19,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
   disabled,
   styles,
   outlined,
+  margin,
   secondary,
 }) => {
   return (
@@ -31,7 +33,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
         color: Colors.white,
         borderRadius: 15,
         padding: 10,
-        margin: 10,
+        margin: 10 || margin,
         ...styles,
       }}
       onClick={onClick}

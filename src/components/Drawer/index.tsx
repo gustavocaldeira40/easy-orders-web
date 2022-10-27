@@ -12,13 +12,22 @@ import ListItemText from '@mui/material/ListItemText'
 import { innerHeight } from 'utils/window'
 import { DrawerItemProps } from 'interfaces/drawer-item'
 import Hidden from '@mui/material/Hidden/Hidden'
-import MenuIcon from '@mui/icons-material/Menu'
+import ClientsIcon from 'assets/icons/clients.png'
+import ClientsIconMatte from 'assets/icons/clients-matte.png'
+import OrdersIcon from 'assets/icons/orders.png'
+import OrdersIconMatte from 'assets/icons/orders-matte.png'
+
+import ProductsIcon from 'assets/icons/products.png'
+import ProductsIconMatte from 'assets/icons/products-matte.png'
+
 import {
   ContainerIconMenu,
   ContainerItem,
   IconMenu,
   IconMenuOpen,
   LineDown,
+  ListIcon,
+  ListText,
 } from './style'
 import { listMenu } from './list-menu'
 import DrawerClose from './drawer-close'
@@ -26,6 +35,7 @@ import SubMenu from './sub-menu'
 
 const DrawerComponent: React.FC = () => {
   const [open, setOpen] = useState(false)
+  const [isHover, setIsHover] = useState(false)
   const [itemSelected, setItemSelected] = useState({} as DrawerItemProps)
 
   return (
@@ -64,6 +74,9 @@ const DrawerComponent: React.FC = () => {
               return (
                 <>
                   <ContainerItem
+                    onFocus={() => setIsHover(true)}
+                    onBlur={() => setIsHover(false)}
+                    isFocused={item?.name === itemSelected?.name}
                     onClick={() => {
                       setItemSelected(item)
                     }}
@@ -76,25 +89,26 @@ const DrawerComponent: React.FC = () => {
                         padding: 10,
                       }}
                     >
-                      <ListItemIcon
-                        style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          cursor: 'pointer',
-                        }}
-                      >
-                        {item?.icon}
-                      </ListItemIcon>
+                      {/* If For controls of color and hover of menu */}
+                      <ListIcon>
+                        {/* If of Clients */}
+                        {itemSelected?.name === 'Clients' &&
+                        item?.name === 'Clients' ? (
+                          <IconMenu src={ClientsIconMatte} />
+                        ) : itemSelected?.name === 'Orders' &&
+                          item?.name === 'Orders' ? (
+                          <IconMenu src={OrdersIconMatte} />
+                        ) : itemSelected?.name === 'Products' &&
+                          item?.name === 'Products' ? (
+                          <IconMenu src={ProductsIconMatte} />
+                        ) : (
+                          item?.icon
+                        )}
+                      </ListIcon>
 
-                      <ListItemText
+                      <ListText
+                        isFocused={item?.name === itemSelected?.name}
                         primary={item?.name}
-                        style={{
-                          fontWeight: 500,
-                          color: Colors.white,
-                          fontFamily: 'Roboto Condensed',
-                          textTransform: 'uppercase',
-                        }}
                       />
                     </List>
 

@@ -35,8 +35,9 @@ const Login: React.FC = () => {
   /*
    *   CONTEXT
    */
-  const { setUser, setIsAuthenticate, setToken, logOut } =
-    useContext(DataContext)
+  const { setUser, setIsAuthenticate, setToken, logOut } = useContext(
+    DataContext,
+  )
   /*
    *   REFS
    */
@@ -181,6 +182,7 @@ const Login: React.FC = () => {
               onChange={handleChange('password')}
               errorMessage={errors.password}
               placeholder="Password"
+              onKeyDown={keyPress}
             />
             <ContainerLinks>
               {emailOrNickname ? (
